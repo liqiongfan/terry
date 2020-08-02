@@ -21,8 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4dbf5b95-0244-43b8-94c7-d3c25405a14d" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/themes/jsimple/source/images/sns-qrcode.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/_posts/研究Canal同步MySQL.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/研究Canal同步MySQL.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/jsimple/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/jsimple/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/jsimple/layout/_partial/_post.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/jsimple/layout/_partial/_post.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/jsimple/layout/_partial/archive.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/jsimple/layout/_partial/archive.ejs" afterDir="false" />
@@ -74,7 +74,7 @@
       <workItem from="1596295206149" duration="138000" />
       <workItem from="1596295773414" duration="779000" />
       <workItem from="1596325539383" duration="13672000" />
-      <workItem from="1596370912581" duration="767000" />
+      <workItem from="1596370912581" duration="886000" />
     </task>
     <servers />
   </component>

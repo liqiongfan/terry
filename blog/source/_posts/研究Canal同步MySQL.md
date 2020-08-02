@@ -2,6 +2,10 @@
 title: 研究Canal同步MySQL
 date: 2020-08-02 20:22:27
 tags:
+- canal
+- binlog
+- mysql
+- 同步中间件
 categories:
 - tech
 description: canal同步中间件
