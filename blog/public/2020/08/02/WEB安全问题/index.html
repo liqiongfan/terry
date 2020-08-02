@@ -137,22 +137,23 @@
             </div>
             <h2 class="post-title">WEB安全问题</h2>
             <div class="post-meta">
-                本文共计4542个字 |
+                本文共计4561个字 |
                 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
             <h3 id="什么是WEB安全？"><a href="#什么是WEB安全？" class="headerlink" title="什么是WEB安全？"></a>什么是WEB安全？</h3><p>WEB安全是指网络编码安全问题，防止各种注入、代码漏洞问题，维护WEB网络安全</p>
 <h3 id="PHP-WEB安全的种类"><a href="#PHP-WEB安全的种类" class="headerlink" title="PHP WEB安全的种类"></a>PHP WEB安全的种类</h3><ul>
-<li>SQL注入<br>SQL注入应该算是非常常见的一种安全编码问题，因为现在一般下而言，很多开发都是直接拼接SQL语句，如下就是一个常见的例子：</li>
+<li>SQL注入</li>
 </ul>
+<p>SQL注入应该算是非常常见的一种安全编码问题，因为现在一般下而言，很多开发都是直接拼接SQL语句，如下就是一个常见的例子：</p>
 <p>网站通过PHP获取用户信息：</p>
 <figure class="highlight php"><figcaption><span>php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">$username = $_GET[<span class="string">&#x27;username&#x27;</span>];</span><br><span class="line">$query = <span class="string">&quot;SELECT * FROM users WHERE username = &#x27;$username&#x27;&quot;</span>;</span><br></pre></td></tr></table></figure>
 
 <p>攻击者控制通过 GET 和 POST 发送的查询（或者例如 UA 的一些其他查询）。一般情况下，你希望查询户名为「 terry 」的用户产生的 SQL 语句如下：</p>
 <figure class="highlight sql"><figcaption><span>mysql</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> username = <span class="string">&#x27;peter&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<p>如果客户端上送特殊的参数，如： 击者发送了特定的用户名参数，例如：’ OR ‘1’=’1，那么拼接的SQL如下：</p>
+<p>如果客户端上送特殊的参数，如： 击者发送了特定的用户名参数，例如：<code>&#39; OR &#39;1&#39;=&#39;1</code> ，那么拼接的SQL如下：</p>
 <figure class="highlight sql"><figcaption><span>mysql</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">users</span> <span class="keyword">WHERE</span> username = <span class="string">&#x27;terry&#x27;</span> <span class="keyword">OR</span> <span class="string">&#x27;1&#x27;</span> = <span class="string">&#x27;1&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <p>所以这里建议使用mysql的预处理功能，能够防范SQL注入风险</p>
@@ -180,18 +181,20 @@
 
 <p>另外必须使用 Cookie 时，如果无需 JS 读取的话，请必须设置为 “HTTP ONLY”。这个设置可以令 JavaScript 无法读取 PHP 端种的 Cookie。</p>
 <ul>
-<li>XSRF/CSRF<br>CSRF 是跨站请求伪造的缩写，它是攻击者通过一些技术手段欺骗用户去访问曾经认证过的网站并运行一些操作。</li>
+<li>XSRF/CSRF</li>
 </ul>
+<p>CSRF 是跨站请求伪造的缩写，它是攻击者通过一些技术手段欺骗用户去访问曾经认证过的网站并运行一些操作。</p>
 <figure class="highlight php"><figcaption><span>php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//delete-account.php</span></span><br><span class="line"></span><br><span class="line">$confirm = $_GET[<span class="string">&#x27;confirm&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>($confirm === <span class="string">&#x27;yes&#x27;</span>) &#123;</span><br><span class="line">  <span class="comment">//goodbye</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>攻击者可以在他的站点上构建一个触发这个 URL 的表单（同样适用于 POST 的表单），或者将 URL 加载为图片诱惑用户点击：</p>
 <figure class="highlight html"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://example.com/delete-account.php?confirm=yes&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>LFI 本地文件包含攻击<br>LFI （本地文件包含） 是一个用户未经验证从磁盘读取文件的漏洞。<br>我经常遇到编程不规范的路由代码示例，它们不验证过滤用户的输入。我们用以下文件为例，将它要渲染的模板文件用 GET 请求加载。<figure class="highlight php"><figcaption><span>php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  $page = $_GET[<span class="string">&#x27;page&#x27;</span>];</span><br><span class="line">  <span class="keyword">if</span>(!$page) &#123;</span><br><span class="line">    $page = <span class="string">&#x27;main.php&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">include</span>($page);</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>LFI 本地文件包含攻击</li>
 </ul>
+<p>LFI （本地文件包含） 是一个用户未经验证从磁盘读取文件的漏洞。<br>我经常遇到编程不规范的路由代码示例，它们不验证过滤用户的输入。我们用以下文件为例，将它要渲染的模板文件用 GET 请求加载。</p>
+<figure class="highlight php"><figcaption><span>php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  $page = $_GET[<span class="string">&#x27;page&#x27;</span>];</span><br><span class="line">  <span class="keyword">if</span>(!$page) &#123;</span><br><span class="line">    $page = <span class="string">&#x27;main.php&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">include</span>($page);</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
 <p>由于 Include 可以加载任何文件，不仅仅是PHP，攻击者可以将系统上的任何文件作为包含目标传递。</p>
 <figure class="highlight html"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index.php?page=../../etc/passwd</span><br></pre></td></tr></table></figure>
 <p>要防御此类攻击，你必须仔细考虑允许用户输入的类型，并删除可能有害的字符，如输入字符中的“.” “/” “\”。<br>如果你真的想使用像这样的路由系统（我不建议以任何方式），你可以自动附加 PHP 扩展，删除任何非 [a-zA-Z0-9-_] 的字符，并指定从专用的模板文件夹中加载，以免被包含任何非模板文件。<br>我在不同的开发文档中，多次看到造成此类漏洞的 PHP 代码。从一开始就要有清晰的设计思路，允许所需要包含的文件类型，并删除掉多余的内容。你还可以构造要读取文件的绝对路径，并验证文件是否存在来作为保护，而不是任何位置都给予读取。</p>
@@ -203,28 +206,30 @@
 <figure class="highlight php"><figcaption><span>php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//user signup</span></span><br><span class="line">$password = $_POST[<span class="string">&#x27;password&#x27;</span>];</span><br><span class="line">$hashedPassword = password_hash($password, PASSWORD_DEFAULT);</span><br><span class="line"></span><br><span class="line"><span class="comment">//login</span></span><br><span class="line">$password = $_POST[<span class="string">&#x27;password&#x27;</span>];</span><br><span class="line">$hash = <span class="string">&#x27;1234&#x27;</span>; <span class="comment">//load this value from your db</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(password_verify($password, $hash)) &#123;</span><br><span class="line">  <span class="keyword">echo</span> <span class="string">&#x27;Password is valid!&#x27;</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="keyword">echo</span> <span class="string">&#x27;Invalid password.&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><p>中间人攻击<br>MITM （中间人） 攻击不是针对服务器直接攻击，而是针对用户进行，攻击者作为中间人欺骗服务器他是用户<br>欺骗用户他是服务器，从而来拦截用户与网站的流量，并从中注入恶意内容或者读取私密信息，通常发生在公共 WiFi 网络中<br>也有可能发生在其他流量通过的地方，例如ISP运营商。对此的唯一防御是使用 HTTPS，使用 HTTPS 可以将你的连接加密<br>并且无法读取或者篡改流量。你可以从 Let’s Encrypt 获取免费的 SSL 证书，或从其他供应商处购买<br>这里不详细介绍如何正确配置 WEB 服务器，因为这与应用程序安全性无关，且在很大程度上取决于你的设置。<br>你还可以采取一些措施使 HTTPS 更安全，在 WEB 服务器配置加上 Strict-Transport-Security 标示头<br>此头部信息告诉浏览器，你的网站始终通过 HTTPS 访问，如果未通过 HTTPS 将返回错误报告提示浏览器不应显示该页面。<br>然而，这里有个明显的问题，如果浏览器之前从未访问过你的网站，则无法知道你使用此标示头，这时候就需要用到 Hstspreload。</p>
-</li>
-<li><p>命令注入<br>这可能是服务器遇到的最严重的攻击，命令注入的目标是欺骗服务器执行任意 Shell 命令</p>
-</li>
+<li>中间人攻击</li>
 </ul>
+<p>MITM （中间人） 攻击不是针对服务器直接攻击，而是针对用户进行，攻击者作为中间人欺骗服务器他是用户<br>欺骗用户他是服务器，从而来拦截用户与网站的流量，并从中注入恶意内容或者读取私密信息，通常发生在公共 WiFi 网络中<br>也有可能发生在其他流量通过的地方，例如ISP运营商。对此的唯一防御是使用 HTTPS，使用 HTTPS 可以将你的连接加密<br>并且无法读取或者篡改流量。你可以从 Let’s Encrypt 获取免费的 SSL 证书，或从其他供应商处购买<br>这里不详细介绍如何正确配置 WEB 服务器，因为这与应用程序安全性无关，且在很大程度上取决于你的设置。<br>你还可以采取一些措施使 HTTPS 更安全，在 WEB 服务器配置加上 Strict-Transport-Security 标示头<br>此头部信息告诉浏览器，你的网站始终通过 HTTPS 访问，如果未通过 HTTPS 将返回错误报告提示浏览器不应显示该页面。<br>然而，这里有个明显的问题，如果浏览器之前从未访问过你的网站，则无法知道你使用此标示头，这时候就需要用到 Hstspreload。</p>
+<ul>
+<li>命令注入</li>
+</ul>
+<p>这可能是服务器遇到的最严重的攻击，命令注入的目标是欺骗服务器执行任意 Shell 命令</p>
 <p>你如果使用 shell_exec 或是 exec 函数。让我们做一个小例子，允许用户简单的从服务器 Ping 不同的主机。</p>
 <figure class="highlight php"><figcaption><span>php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">$targetIp = $_GET[<span class="string">&#x27;ip&#x27;</span>];</span><br><span class="line">$output = shell_exec(<span class="string">&quot;ping -c 5 $targetIp&quot;</span>);</span><br></pre></td></tr></table></figure>
 
 <p>输出将包括对目标主机 Ping 5次。除非采用 sh 命令执行 Shell 脚本，否则攻击者可以执行想要的任何操作。</p>
 <figure class="highlight php"><figcaption><span>php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping.php?ip=<span class="number">8.8</span><span class="number">.8</span><span class="number">.8</span>;ls -l /etc</span><br></pre></td></tr></table></figure>
 
-<p>Shell 将执行 Ping 和由攻击者拼接的第二个命令，这显然是非常危险的。<br>escapeshellarg 转义用户的输入并将其封装成单引号。</p>
+<p>Shell 将执行 Ping 和由攻击者拼接的第二个命令，这显然是非常危险的。<br><code>escapeshellarg</code> 转义用户的输入并将其封装成单引号。</p>
 <figure class="highlight php"><figcaption><span>php</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line">$targetIp = escapeshellarg($_GET[<span class="string">&#x27;ip&#x27;</span>]);</span><br><span class="line">$output = shell_exec(<span class="string">&quot;ping -c 5 $targetIp&quot;</span>);</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>XXE<br>XXE （XML 外部实体） 是一种应用程序使用配置不正确的 XML 解析器解析外部 XML 时，导致的本地文件包含攻击，甚至可以远程代码执行。</li>
+<li>XXE</li>
 </ul>
+<p>XXE （XML 外部实体） 是一种应用程序使用配置不正确的 XML 解析器解析外部 XML 时，导致的本地文件包含攻击，甚至可以远程代码执行。</p>
 <p>XML 有一个鲜为人知的特性，它允许文档作者将远程和本地文件作为实体包含在其 XML 文件中。</p>
 <figure class="highlight xml"><figcaption><span>xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span></span><br><span class="line"> <span class="meta">&lt;!DOCTYPE <span class="meta-keyword">foo</span> [</span></span><br><span class="line"><span class="meta">   <span class="meta">&lt;!ELEMENT <span class="meta-keyword">foo</span> <span class="meta-keyword">ANY</span> &gt;</span></span></span><br><span class="line"><span class="meta">   <span class="meta">&lt;!ENTITY <span class="meta-keyword">passwd</span> <span class="meta-keyword">SYSTEM</span> <span class="meta-string">&quot;file:///etc/passwd&quot;</span> &gt;</span>]&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">foo</span>&gt;</span><span class="symbol">&amp;passwd;</span><span class="tag">&lt;/<span class="name">foo</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>如果你使用 libxml 可以调用 libxml_disable_entity_loader 来保护自己免受此类攻击。使用前请仔细检查 XML 库的默认配置，以确保配置成功。</p>
-<p>###</p>
 
             
                 
