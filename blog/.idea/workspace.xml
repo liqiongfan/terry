@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4dbf5b95-0244-43b8-94c7-d3c25405a14d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/themes/jsimple/source/images/sns-qrcode.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/jsimple/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/jsimple/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/jsimple/layout/_partial/_post.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/jsimple/layout/_partial/_post.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/jsimple/layout/_partial/archive.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/jsimple/layout/_partial/archive.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/jsimple/layout/_widget/common-article.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/jsimple/layout/_widget/common-article.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/jsimple/layout/layout.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/jsimple/layout/layout.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/jsimple/source/images/cover-day.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/themes/jsimple/source/images/cover-day.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/jsimple/source/images/donate-qr.png" beforeDir="false" afterPath="$PROJECT_DIR$/themes/jsimple/source/images/donate-qr.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/jsimple/source/images/sns-qrcode.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/jsimple/source/js/SimpleCore.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/jsimple/source/js/SimpleCore.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/themes/jsimple" />
+  </component>
+  <component name="ProjectId" id="1fVF9fBNFL1HEquZX1KNx7JKE2G" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/themes/jsimple/source/images" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/themes/jsimple/source/images" />
+      <recent name="$PROJECT_DIR$/public/css/images" />
+      <recent name="$PROJECT_DIR$/themes" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4dbf5b95-0244-43b8-94c7-d3c25405a14d" name="Default Changelist" comment="" />
+      <created>1596295202784</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596295202784</updated>
+      <workItem from="1596295206149" duration="138000" />
+      <workItem from="1596295773414" duration="779000" />
+      <workItem from="1596325539383" duration="13672000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="420" y="85" width="600" height="729" key="find.popup" timestamp="1596333433736">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="420" y="85" width="600" height="729" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1596333433736" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1596336144946">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1596336144946" />
+  </component>
+</project>
