@@ -22,7 +22,7 @@
     <list default="true" id="4dbf5b95-0244-43b8-94c7-d3c25405a14d" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/themes/jsimple/source/images/sns-qrcode.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/研究Canal同步MySQL.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/研究Canal同步MySQL.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/性能分析/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/性能分析/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/jsimple/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/jsimple/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/jsimple/layout/_partial/_post.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/jsimple/layout/_partial/_post.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/jsimple/layout/_partial/archive.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/themes/jsimple/layout/_partial/archive.ejs" afterDir="false" />
@@ -74,7 +74,8 @@
       <workItem from="1596295206149" duration="138000" />
       <workItem from="1596295773414" duration="779000" />
       <workItem from="1596325539383" duration="13672000" />
-      <workItem from="1596370912581" duration="886000" />
+      <workItem from="1596370912581" duration="1093000" />
+      <workItem from="1596464286865" duration="704000" />
     </task>
     <servers />
   </component>
@@ -94,10 +95,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="420" y="85" width="600" height="729" key="find.popup" timestamp="1596333433736">
+    <state x="407" y="85" width="793" height="729" key="find.popup" timestamp="1596464981514">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="420" y="85" width="600" height="729" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1596333433736" />
+    <state x="407" y="85" width="793" height="729" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1596464981514" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1596336144946">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
